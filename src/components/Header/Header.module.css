@@ -1,0 +1,119 @@
+.header {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 150px;
+  gap: 20px;
+}
+
+/* Logo estilo OLX */
+.logo a {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+  gap: 2px;
+}
+
+.logo1 {
+  color: #6e0ad6;
+  font-size: 32px;
+}
+
+.logo2 {
+  color: #00a859;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.logo3 {
+  color: #ff7b00;
+  font-size: 32px;
+}
+
+/* Barra de busca */
+.searchBar {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.searchBar input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.location {
+  border-left: 1px solid #ddd;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.searchBtn {
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+.loginBtn,
+.anunciarBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.loginBtn {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.loginBtn:hover {
+  background-color: #f7f7f7;
+  border-color: #6e0ad6;
+}
+
+.anunciarBtn {
+  background-color: #ff8100;
+  border: none;
+  color: #fff;
+  gap: 8px;
+}
+
+.anunciarBtn:hover {
+  background-color: #e57706;
+}

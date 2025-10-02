@@ -1,0 +1,139 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  width: 400px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  color: #222;
+}
+
+.card p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.socialLogin {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+.google,
+.facebook {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.google {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.facebook {
+  background: #1877f2;
+  color: #fff;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.5rem 0;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+/*selecione a classe divider somente se ela tiver algum conteúdo dentro*/
+.divider:not(:empty)::before {
+  margin-right: 0.75em;
+}
+
+.divider:not(:empty)::after {
+  margin-left: 0.75em;
+}
+
+.card label {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.card input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.loginBtn {
+  width: 100%;
+  padding: 0.9rem;
+  background: #ff7300;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.loginBtn:hover {
+  background: #e56700;
+}
+
+.register {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.register a {
+  color: #6a0dad;
+  text-decoration: none;
+}
+
+.terms {
+  font-size: 12px;
+  color: #777;
+  margin-top: 10px;
+  max-width: 400px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.terms a {
+  color: #6a0dad;
+  text-decoration: none;
+}
