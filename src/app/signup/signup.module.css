@@ -1,0 +1,235 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  background-color: #f7f8fa;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+  gap: 2px;
+}
+
+.logo1 {
+  color: #6e0ad6;
+  font-size: 32px;
+}
+
+.logo2 {
+  color: #00a859;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.logo3 {
+  color: #ff7b00;
+  font-size: 32px;
+}
+
+.logo {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formWrapper {
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.socialLogin {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 24px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.socialButton:hover {
+  background-color: #f5f5f5;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #888;
+  margin: 24px 0;
+  font-size: 14px;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+.separator:not(:empty)::before {
+  margin-right: 0.5em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: 0.5em;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.formGroup legend,
+.formGroup label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.formGroup label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.formGroup input[type='text'],
+.formGroup input[type='email'],
+.formGroup input[type='password'] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.formGroup input:focus {
+  border-color: #7d2cff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(125, 44, 255, 0.2);
+}
+
+.formGroup small {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-top: 6px;
+}
+
+.passwordWrapper {
+  position: relative;
+}
+
+.eyeIcon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  font-size: 20px;
+}
+
+.passwordCriteria {
+  text-align: left;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.passwordCriteria p {
+  margin-bottom: 8px;
+}
+
+.passwordCriteria ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.criterion {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  color: #666; /* Cor padrão para inválido */
+  transition: color 0.3s;
+}
+
+.criterion.valid {
+  color: #00a000; /* Verde para válido */
+}
+
+.criterion svg {
+  font-size: 16px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 14px;
+  background-color: #f77d00;
+  color: white;
+  border: none;
+  border-radius: 28px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+  background-color: #e66a00;
+}
+
+.loginLink {
+  margin-top: 24px;
+  font-size: 16px;
+}
+
+.loginLink a {
+  color: #7d2cff;
+}

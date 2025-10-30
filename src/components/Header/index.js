@@ -1,8 +1,30 @@
+'use client'
 import styles from './Header.module.css'
 import Link from 'next/link'
 import { IoSearch } from 'react-icons/io5';
+import { useEffect, useState } from 'react';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import { app } from '../../firebase';
+import { FaAngleDown } from 'react-icons/fa';
 
 export default function Header() {
+    const [user, setUser] = useState(null);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const auth = getAuth(app);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        });
+        return () => unsubscribe();
+    }, [auth]);
+
+    const handleLogout = async () => {
+        await signOut(auth);
+        setUser(null);
+        window.location.href = '/';
+    }
+
     return (
         <header className={styles.header}>
             {/* Logo */}
@@ -24,19 +46,60 @@ export default function Header() {
                 </div>
             </div>
 
-            {/* Busca */}
+            {/* Menu */}
             <nav className={styles.navbar}>
                 <ul>
-                    <li>
-                        <Link href="/signin" className={styles.loginBtn}>
-                            Entrar
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/" className={styles.anunciarBtn}>
-                            Anunciar gratis
-                        </Link>
-                    </li>
+                    {user ? (
+                        <>
+                            <li>
+                                <Link href='/' className={styles.anuncio}>
+                                    Meus Anúncios
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link href='/' className={styles.anunciarBtn}>
+                                    Postar Anúncio
+                                </Link>
+                            </li>
+
+                            <li className={styles.profileContainer}>
+                                <button
+                                    className={styles.profileBtn}
+                                    onClick={() => setMenuOpen(!menuOpen)}
+                                >
+                                    <img
+                                        src={user.photoURL}
+                                        alt={user.displayName}
+                                        className={styles.profileImg}
+                                    />
+                                    <span>{user.displayName?.split(''[0])}</span>
+                                    <FaAngleDown size={16} className={styles.arrow} />
+                                </button>
+
+                                {menuOpen && (
+                                    <div className={styles.dropdownMenu}>
+                                        <button>Minha Conta</button>
+                                        <button>Favoritos</button>
+                                        <button onClick={handleLogout}>Sair</button>
+                                    </div>
+                                )}
+                            </li>
+                        </>
+                    ) : (
+                        <>
+                            <li>
+                                <Link href="/signin" className={styles.loginBtn}>
+                                    Entrar
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/" className={styles.anunciarBtn}>
+                                    Anunciar gratis
+                                </Link>
+                            </li>
+                        </>
+                    )}                   
                 </ul>
             </nav>
         </header>
